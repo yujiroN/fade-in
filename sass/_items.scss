@@ -1,0 +1,54 @@
+.items {
+    max-width: 1000px;
+    margin: 0 auto;
+    @include sp {
+        padding: 0 20px;
+    }
+    .item {
+        padding: 150px 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        @include sp {
+            flex-direction: column;
+            padding: 50px 0;
+        }
+        &:nth-child(even) {
+            flex-direction: row-reverse;
+            @include sp {
+                flex-direction: column;
+            }
+        }
+        &__img {
+            flex-basis: 46%;
+            @include sp {
+                margin-bottom: 30px;
+            }
+        }
+        &__text {
+            flex-basis: 46%;
+            h2 {
+                font-size: 2rem;
+                margin-bottom: 30px;
+            }
+            p {
+                font-size: 1.8rem;
+                line-height: 1.5;
+            }
+        }
+    }
+}
+
+// フェードイン
+
+.fade-in {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(50px);
+    transition: opacity 2s, transform 2s;
+}
+.fade-in.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0px);
+}

@@ -1,0 +1,34 @@
+.header {
+    padding: 25px 0;
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &__title {
+        h1 {
+            font-size: 2rem;
+            @include sp {
+                padding-left: 20px;
+                font-size: 1.5rem;
+            }
+        }
+    }
+    &__nav {
+        @include sp {
+            display: none;
+        }
+        ul {
+            display: flex;
+            li {
+                &:not(:first-child) {
+                    margin-left: 50px;
+                }
+                a {
+                    font-size: 1.7rem;
+                    color: black;
+                }
+            }
+        }
+    }
+}
